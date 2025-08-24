@@ -1,0 +1,584 @@
+%------------------------------------------------------------------------------
+% CV in Latex
+% Author : Charles Rambo
+% Based off of: https://github.com/sb2nov/resume and Jake's Resume on Overleaf
+% Most recently updated version may be found at https://github.com/fizixmastr 
+% License : MIT
+%------------------------------------------------------------------------------
+
+\documentclass[A4, 11pt]{article}
+%\documentclass[letterpaper,11pt]{article} %For use in US
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{tikz}
+\input{glyphtounicode}
+\usepackage{tabularx}
+
+
+\begin{comment}
+I am by no means a professional when it comes to the CV's/resumes, I have
+received various trainings on how to write a CV and resume from my high 
+school, as well as the Austin College and University of Eastern Finland's
+career counseling departments. As I intend to share my CV as a template, I 
+feel that it is my responsibility to provide explanations of my work.
+\end{comment}
+
+
+%-----FONT OPTIONS-------------------------------------------------------------
+\begin{comment}
+The font of the document will impact not just how readable it is, but how it is
+perceived. In the "The Craft of Scientific Writing" by Michael Alley, shares a
+common fonts for publication as well as their use. I have chosen to use
+Palatino for its legibility, some others are given below. There is far too much
+about typography to discus here. Note: serif fonts have short projecting
+strokes, sans-serif fonts are sans (without) these strokes.
+\end{comment}
+
+
+% serif
+ \usepackage{palatino}
+% \usepackage{times} %This is the default as well
+% \usepackage{charter}
+
+% sans-serif
+% \usepackage{helvet}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+%-----PAGE SETUP---------------------------------------------------------------
+
+% Adjust margins
+%\addtolength{\oddsidemargin}{-1cm}
+%\addtolength{\evensidemargin}{-1cm}
+%\addtolength{\textwidth}{2cm}
+%\addtolength{\topmargin}{-1cm}
+%\addtolength{\textheight}{2cm}
+
+% Margins for US Letter size
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.0in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0cm}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that .pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-----CUSTOM COMMANDS FOR FORMATTING SECTIONS----------------------------------
+\newcommand{\CVItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\CVSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \small#3 & \small #4 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\CVSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \text{\small#1} & \text{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\CVSubItem}[1]{\CVItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\CVSubHeadingListStart}{\begin{itemize}[leftmargin=0.5cm, label={}]}
+% \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]} % Uncomment for US
+\newcommand{\CVSubHeadingListEnd}{\end{itemize}}
+\newcommand{\CVItemListStart}{\begin{itemize}}
+\newcommand{\CVItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%------------------------------------------------------------------------------
+% CV STARTS HERE  %
+%------------------------------------------------------------------------------
+\begin{document}
+
+%-----HEADING------------------------------------------------------------------
+\begin{comment}
+% In Europe it is common to include a picture of ones self in the CV. Select
+% which heading appropriate for the document you are creating.
+\end{comment}
+
+\begin{minipage}[c]{0.05\textwidth}
+\-\
+\end{minipage}
+
+%\begin{minipage}[c]{0.2\textwidth}
+%\begin{tikzpicture}
+%   \clip (0,0) circle (1.75cm);
+%    \node at (0,-.7) {\includegraphics[width = 9cm]{portrait}}; 
+%        if necessary the picture may be moved by changing the at (coordinates)
+%    width defines the 'zoom' of the picture
+%\end{tikzpicture}
+%\hfill\vline\hfill
+%\end{minipage}
+%\begin{minipage}[c]{0.4\textwidth}
+%    \textbf{\Huge \scshape{Charles Rambo}} \\ \vspace{1pt} 
+    % \scshape sets small capital letters, remove if desired
+%    \small{+1 123-456-7890} \\
+%    \href{mailto:you@provider.com}{\underline{you@provider.com}}\\
+    % Be sure to use a professional *personal* email address
+%    \href{https://www.linkedin.com/in/charles-rambo/}{\underline{linkedin.com/in/charles-rambo}} \\
+    % you should adjust you linked in profile name to be professional and recognizable
+%    \href{https://github.com/fizixmastr}{\underline{github.com/fizixmastr}}
+%\end{minipage}
+
+% Without picture
+\begin{center}
+    \textbf{\Huge \scshape Folasade Ayoola} \\ \vspace{1pt} %\scshape sets small capital letters, remove if desired
+    \small +1 650-862-0545 \\%$|$ \\
+    \href{mailto:fayoola@stanford.edu}{\underline{fayoola@stanford.edu}} \\ %$|$ \\
+    % Be sure to use a professional *personal* email address
+    \href{https://linkedin.com/in/folasadeayoola}{\underline{linkedin.com/in/folasadeayoola}} %$|$
+    % you should adjust you linked in profile name to be professional and recognizable
+    \href{https://github.com/fizixmastr}{\underline{github.com/b0nnyCastle}}
+\end{center}
+
+
+
+\begin{comment}
+This CV was written for specifically for positions I was applying for in
+academia, and then modified to be a template.
+
+A standard CV is about two pages long where as a resume in the US is one page.
+sections can be added and removed here with this in mind. In my experience, 
+education, and applicable work experience and skills are the most import things
+to include on a resume. For a CV the Europass CV suggests the categories: Work
+Experience, Education and Training, Language Skills, Digital Skills,
+Communication and Interpersonal Skills, Conferences and Seminars, Creative Works
+Driver's License, Hobbies and Interests, Honors and Awards, Management and
+Leadership Skills, Networks and Memberships, Organizational Skills, Projects,
+Publications, Recommendations, Social and Political Activities, Volunteering.
+
+Your goal is to convey a who, what , when, where, why for every item you share. 
+The who is obviously you, but I believe the rest should be done in that order.
+For example below. An employer cares most about the degree held and typically 
+less about the institution or where it is located (This is still good 
+information though). Whatever order you choose be consistent throughout.
+\end{comment}
+
+%-----EDUCATION----------------------------------------------------------------
+\section{Education}
+  \CVSubHeadingListStart
+%    \CVSubheading % Example
+%      {Degree Achieved}{Years of Study}
+%      {Institution of Study}{Where it is located}
+    \CVSubheading
+      {{Doctor of Philosophy (in view) $|$ \emph{\small{Energy Science and Engineering}}}}{Apr. 2019 -- December 2025 }
+      {Stanford University}{Stanford, California, United States}
+    \CVSubheading
+      {{Master of Business Administration (in view) $|$ \emph{\small{Sa\"id Business School}}}}{Sep. 2022 -- Sep. 2023}
+      {Oxford University}{Oxford, United Kingdom}
+    \CVSubheading
+      {{Certificate in Entrepreneurship and Innovation $|$ \emph{\small{Stanford Ignite}}}}{Jun. 2020 -- Jul. 2020}
+      {Stanford Graduate School of Business}{Stanford, California}
+    \CVSubheading
+      {{Master of Science $|$ \emph{\small{Energy Resources Engineering}}}}{Sep. 2017 -- Aug. 2020}
+      {Stanford University}{Stanford, California}
+    \CVSubheading
+      {{Bachelor of Science $|$ \emph{\small{Chemical Engineering}}}}{Oct. 2010 -- Nov. 2015}
+      {University of Lagos}{Lagos, Nigeria}
+  \CVSubHeadingListEnd
+
+%-----WORK EXPERIENCE----------------------------------------------------------
+\begin{comment}
+try to briefly explain what you did and why it is relevant to the position you
+are seeking
+\end{comment}
+
+\section{Work Experience}
+  \CVSubHeadingListStart
+%    \CVSubheading %Example
+%      {What you did}{When you worked there}
+%      {Who you worked for}{Where they are located}
+%      \CVItemListStart
+%        \CVItem{Why it is important to this employer}
+%      \CVItemListEnd
+    \CVSubheading
+    {Co-Founder, Chief Scientific Officer}{Sep. 2020 -- Jun. 2025}
+      {ElectricFish Energy Inc., \textit{Technology Development \& Strategy}}{San Carlos, CA}
+      \CVItemListStart
+        \CVItem{Developed distributed energy resource management system, including patented battery-integrated ultra-fast EV chargers with AI-driven optimization, achieving 90\% cost reduction for make-ready deployment and and 2-hour commissioning of 350kW DCFC for electric fleet operators.}
+        \CVItem{Defined technical roadmap and cross-functional strategy aligning engineering innovation with market needs in mobility and grid resilience, leading cross-disciplinary teams to optimize system performance and integration with energy markets including demand response and vehicle-to-grid services (V2G).}
+        \CVItem{Secured \$3.5M+ in grants, strategic corporate and venture financing while establishing partnerships with utilities across 5 U.S. states; negotiated agreements securing over \$20M in debt financing and \$160M sales pipeline for distributed energy solutions.}
+        \CVItem{Led technical and commercial solutions architecture, developing comprehensive energy financial models analyzing TCO, ROI, and grid resilience metrics and market‑driven product road‑mapping to win and deliver pilot deployments with utilities, film studios, fleet operators, municipalities, and real‑estate developers across CA, MI, and NY to optimize grid‑resilient mobility through demand‑response and V2G integration.}
+        \CVItem{Designed business case models and investment memos for commercial partnerships with utilities, cities, and real estate/fleet operators, shaping adoption and financing of clean energy solutions.}
+        \CVItem{Drove ElectricFish to national acclaim – TIME Magazine named it one of America’s Top GreenTech Companies (2024) and represented ElectricFish at global consortiums and industry forums (CharIN, TEP, COP), forging strategic partnerships and driving global adoption efforts in the U.S., U.K., France, Singapore, and Scotland.}
+        \CVItem{Managed company policy and regulatory strategy and states, including mapping policy, representing on regulatory working groups like VGI and drafting responses to regulation dockets.}
+    \CVItemListEnd
+
+\CVSubheading
+    {Board Member}{Sep. 2020 -- Jan. 2022}
+      {ElectricFish Energy Inc., \textit{Technology Development \& Strategy}}{Fremont, CA}
+      \CVItemListStart
+        \CVItem{Incorporated company and served on the Board of Directors leading governance and financing term-sheet negotiations.}
+    \CVItemListEnd     
+
+    \CVSubheading
+      {Research Fellow}{Oct. 2021 -- Mar. 2025}
+      {Benson Lab, \textit{Satre Family Stanford Interdisciplinary Graduate Fellowship}}{Stanford, CA}
+      \CVItemListStart
+        \CVItem{Built scalable integrated transportation network model for decarbonization of heavy-duty trucking and drayage to assess the performance of refueling infrastructure investments published as an open-source simulation tool (GitHub).}
+        \CVItem{Developed data-driven models for heavy-duty transportation electrification with operator-attentive market constraints with persona-based trip synthesis, route-based fuel demand estimation, refueling behavior uncertainty modeling, refueling infrastructure investment portfolio optimization, economic feasibility and risk analysis.}
+        \CVItem{Assessed economic transition pathways for low-carbon sustainable finance with market instruments and incentive alignment in the political economy of oil-dependent economy, analyzing optimal infrastructure development plans for oil commodity revenue replacement with blue hydrogen in Nigeria.}
+%        \CVItem{Design of $CO_{2}$ absorption-injection well}
+      \CVItemListEnd  
+
+    \CVSubheading
+      {Technical Consultant}{Apr. 2023 -- Dec. 2024}
+      {SOUND Ventures, \textit{SOUNDWaves VC Investment Technical Due Diligence}}{Los Angeles, CA \textit{remote}}
+      \CVItemListStart
+      
+        \CVItem{Engaged as subject-matter expert to a leading VC on \$5-\$20 million hard-tech climate investments; delivered market analyses, competitive benchmarking, and technology readiness assessments across photoelectrochemical clean hydrogen and textile recycling.}
+        
+        \CVItem{Conducted technical deep-dives with portfolio prospects’ founding and engineering leadership to evaluate TRL, IP, and scale-up economics; synthesized into short-form IC briefs and investment memos for the managing partner.}
+        
+        \CVItem{Held a 1:1 briefing with the firm’s founder (a high-profile VC with a public profile in entertainment) to inform the final follow-up investment decision.}
+        
+        \CVItem{Recommended diligence covenants and post-close technical KPIs to track commercialization risk and capital efficiency.}
+    \CVItemListEnd  
+
+        
+    \CVSubheading
+      {Research Assistant}{Oct. 2017 -- Sep. 2021}
+      {Benson Lab, Stanford University, \textit{Deep Decarbonization and Carbon Capture}}{Stanford, CA}
+      \CVItemListStart
+        \CVItem{Developed decision-support models with technoeconomic and investment returns analysis for California oil production “greening” with produced water absorption-injection well and carbon capture, utilization \& storage facilities under fiscal incentives of Section 45Q and LCFS.}
+%        \CVItem{Design of $CO_{2}$ absorption-injection well}
+      \CVItemListEnd    
+   
+    \CVSubheading
+      {Shultz Energy Fellow}{Jun. 2021 -- Aug. 2021}
+      {Hawai'i Public Utilities Commission, \textit{Office of Policy and Research}}{Honolulu, HI \textit{emote}}
+      \CVItemListStart
+        \CVItem{Awarded a Stanford Shultz Energy Fellowship to support Hawai'i’s ambitious clean energy goals; delivered strategic analyses quantifying the potential deferred capacity and offset cost of electricity generation with vehicle-grid integration (VGI) on the Island of O’ahu in 2030 to inform utility financial incentive compensation within 8 weeks.}
+        \CVItem{Developed on utility and rate policy, including Performance Incentive Mechanisms (PIMs) to reward the utilities for the electrification of transportation, directly influencing regulatory goals and economic models for transportation electrification in Hawai'i.}
+ %       \CVItem{Quantified the potential deferred capacity and offset cost of electricity generation with vehicle-grid integration (VGI) on the Island of O’ahu in 2030 to inform utility financial incentive compensation.}
+      \CVItemListEnd
+    
+    \CVSubheading
+      {Project Intern}{Jul. 2019 -- Aug. 2019}
+      {Adpack Ltd., \textit{Stanford Seed East Africa}}{Nairobi, Kenya}
+      \CVItemListStart
+        \CVItem{Built real-time analytics and operational intelligence tools, improving manufacturing throughput by 10\% and enabling more informed management decisions.}
+      \CVItemListEnd
+      
+    \CVSubheading
+      {Process Technology and Innovation Engineer}{Apr. 2017 -- Aug. 2017}
+      {Unilever Nigeria Ltd., \textit{Non-Soapy Detergents Process Management}}{Lagos, Nigeria}
+      \CVItemListStart
+        \CVItem{Developed and implemented end-to-end manufacturing process operations intelligence system, leading to a 97\% reduction in material over-use cost and 13\% factory top-line increase in two quarters while building systems to reinforce a culture of operational excellence.}
+        \CVItem{Coordinated teams across Nigeria, Kenya and South Africa to implement sustainable operations practices, including energy-efficient equipment retrofits, manufacturing up-time outage resilience improvements and waste-to-value programs and implementing large-scale operations management and continuous improvement.}
+      \CVItemListEnd
+      
+    \CVSubheading
+      {Industrial Trainee}{Jul. 2014 -- Dec. 2014}
+      {Chevron Nigeria Ltd., \textit{Reserves and Reservoir Management Framework}}{Lagos, Nigeria}
+      \CVItemListStart
+        \CVItem{Performed the reservoir development planning on an onshore formation}
+        \CVItem{Performed daily safety and maintenance walk-through, and custody transfer sampling and measurement with Process Engineering team at the Escravos Dehydration Unit and Gas Plant}
+      \CVItemListEnd
+  \CVSubHeadingListEnd
+
+%-----PROJECTS AND RESEARCH----------------------------------------------------
+\begin{comment}
+Ideally the title of the work should speak for what it is. However if you feel
+like you should explain more about why the project is applicable to this job,
+use item list as is shown in the work experience section.
+\end{comment}
+
+\section{Projects and Research}
+
+  \CVSubHeadingListStart
+%    \CVSubheading
+%      {Title of Work}{When it was done}
+%      {Institution you worked with}{unused}
+
+    \CVSubheading
+      {{Operator-risk aware model for investment planning of heavy-duty ZEV refueling infrastructure}  \emph{\small{}}}{2024}
+      {Stanford University}{}
+      
+    \CVSubheading
+      {{Carbon-free fossil-fuel-based alternatives to oil and gas: Economic transition planning for Nigeria}  \emph{\small{}}}{2022}
+      {Stanford University}{}
+
+    \CVSubheading
+      {{Technoeconomic analysis of the capture of California oilfield $CO_2$ emissions with produced water}  \emph{\small{}}}{2020}
+      {Stanford University}{}
+    \CVSubheading
+      {{Moving towards a hydrogen future -- the hydrogen economy of France, Italy, Portugal and Spain}   \emph{\small{}}}{2020}
+      {Stanford University}{}  
+    \CVSubheading
+      {{Optimizing a comprehensive CO2 network for time-varying carbon subsidies} \emph{\small{}}}{2019}
+      {Stanford University}{}
+    \CVSubheading
+      {{Optimal decision for generator, ESS dispatch in micro-grid under variability using RL algorithms}  \emph{\small{}}}{2018}
+      {Stanford University}{}
+    \CVSubheading
+      {{Wind resource quantification \& building integration of Vertical Axis Wind Turbines, Downtown SF}  \emph{\small{}}} {2018}
+      {Stanford University}{}
+    \CVSubheading
+      {{Algorithm for the design of a cylinder-on-cone spray drying chamber} \emph{\small{}}}{2015}
+      {University of Lagos}{}
+    \CVSubheading
+      {{Process Plant Design for the Production of 45,000 tons per annum Titanium Dioxide} \emph{\small{}}}{2015}
+      {University of Lagos}{}
+    \CVSubheading
+      {{Estimating the duration of production plateau in water-flooded reservoirs}  \emph{\small{}}} {2014}
+      {Chevron Nigeria Ltd.}{}
+
+  \CVSubHeadingListEnd
+
+
+%-----PATENTS----------------------------------------------------
+\begin{comment}
+Ideally the title of the work should speak for what it is. However if you feel
+like you should explain more about why the project is applicable to this job,
+use item list as is shown in the work experience section.
+\end{comment}
+
+\section{Patents}
+
+  \CVSubHeadingListStart
+%    \CVSubheading
+%      {Title of Work}{When it was done}
+%      {Institution you worked with}{unused}
+
+    \CVSubheading
+      {{\textit{Lead Inventor}, US-11769094-B2 (ElectricFish Energy)}  \emph{\small{}}}{2023}
+      {System and method for real-time distributed micro-grid optimization using price signals}{}
+      
+    \CVSubheading
+      {{\textit{Co-inventor}, US-11270243-B1 (ElectricFish Energy)}  \emph{\small{}}}{2022}
+      {System and method for electrical grid management, risk mitigation, and resilience}{}
+
+ 
+\CVSubHeadingListEnd
+
+%-----CONFERENCES AND PRESENTATIONS--------------------------------------------
+\begin{comment}
+Again the title should have already been enough, but if it is necessary to add
+descriptions maintain the consistency from prior sections
+\end{comment}
+
+\section{Conferences and Presentations}
+  \CVSubHeadingListStart
+%    \CVSubheading % Example
+%      {Work Presented}{When}
+%      {Occasion}{}
+
+    \CVSubheading{\textit{Delegate}, Stanford University, Non-Governmental Observer to the Parties}{Nov. 2022}{2022 United Nations Climate Change Conference (Sharm El Sheikh)}{} 
+    
+    \CVSubheading{\textit{Delegate}, University of Oxford, Non-Governmental Observer to the Parties}{Nov. 2022}{2022 United Nations Climate Change Conference (Sharm El Sheikh)}{} 
+
+    \CVSubheading{\textit{Presenter}, Analysis of Hydrogen as a Transition Alternative For O\&G-Dependent Countries}{Oct. 2022}{Greenhouse Gas Technologies Conference, GHGT-16 (Lyon)}{} 
+    
+      \CVSubheading{\textit{Speaker}, Resilient Energy Infrastructure for Communities}{Dec. 2021}{Transportation Electrification Partnership Summit}{}
+      
+      \CVSubheading{\textit{Delegate}, Stanford University Non-Governmental Observer to the Parties}{Nov. 2021}{2021 United Nations Climate Change Conference (Glasgow)}{}      
+      
+      
+      \CVSubheading{\textit{Panelist}, Not a Fleeting Opportunity: Startups Discuss the Big Rig Revolution}{Jun. 2021}{EPRI Electrification 2021: Frontiers of e-Mobility}{}
+      
+      \CVSubheading{\textit{Speaker}, Vehicle to Grid Integration Technology}{Jun. 2021}{EPIC Energy Innovation Virtual Tour: Low-Carbon Solutions for Increased Reliability}{}
+      
+    \CVSubheading
+      {Absorber Design and Operational Feasibility for $CO_2$ capture with Brine}{Nov. 2018}
+      {Stanford Center for Carbon Storage Seminar}{}
+
+  \CVSubHeadingListEnd
+
+%-----HONORS AND AWARDS--------------------------------------------------------
+\section{Honors and Awards}
+  \CVSubHeadingListStart
+%    \CVSubheading %Example
+%      {What}{When}
+%      {Short Description}{}
+
+    \CVSubheading{Stanford Impact Founders Prize (AetherX Tech)}{2025}{Stanford GSB prize for emerging social entrepreneurs and ecopreneurs as they test, implement, \\ and iterate on their venture ideas}{}
+
+    \CVSubheading{TIME America's Top GreenTech Companies (ElectricFish Energy)}{2024}{Comapny founded ranked by TIME Magazine in collaboration with Statista and Lexis Nexis \\ as one of the top climatetech companies in the United States}{}
+
+    \CVSubheading{Finalist, RVLT50}{2023}{Lee Kuan Yew Global Business Plan Competition, Singapore}{}
+    
+    \CVSubheading{Forbes 30 under 30 in Energy, North America}{2022}{Recognition by Forbes editors and expert industry judges as a member of the world’s most \\ impactful community of young entrepreneurs and game-changers}{}
+    
+    \CVSubheading{Stanford Global Energy Heroes Prize Awardee}{2022}{Global competition by the Stanford Precourt Institute for Energy's Global Energy Forum recognizing \\ young people using sustainable energy to make a positive impact in their communities}{}
+    
+    \CVSubheading{Satre Family Stanford Interdisciplinary Graduate Fellow}{2021}{Competitive university-wide program awarding three-year fellowships to outstanding doctoral students \\ engaged in interdisciplinary research}{}
+    
+    \CVSubheading{Shultz Energy Fellow}{2021}{Stanford University (Precourt Institute for Energy) Fellowship integrating students into energy and climate \\ ecosystems in the West}{}
+    
+    \CVSubheading{On Deck ClimateTech (ODCT) and Build for Climate (ODB4C) Fellow}{2021}{On Deck talent and innovators community program for entrepreneurs building climate solutions}{}
+    
+    \CVSubheading
+      {Winner, USAEE Case Competition}{2020}
+      {National case-study competition assessing the hydrogen economy in Europe}{}
+    \CVSubheading
+      {Recipient, MTN Foundation Scholarship Award}{2012-2013}
+      {Merit-based scholarship for university students in STEM}{}
+    \CVSubheading
+      {Recipient, NNPC-Chevron Nigeria Limited Joint Venture Undergraduate Scholarship Award}{2011-2014}
+      {Merit-based scholarship for university students in oil and gas-related STEM fields}{}
+    \CVSubheading
+      {Awardee, NNPC-Shell Nigeria Joint Venture Undergraduate Scholarship Award}{2011-2014}
+      {Merit-based scholarship for university students in oil and gas-related STEM fields}{}
+    \CVSubheading
+      {Awardee, NNPC-Mobil-Producing Nigeria Joint Venture Undergraduate Scholarship Award}{2011-2013}
+      {Merit-based scholarship for university students in oil and gas-related STEM fields}{}
+    \CVSubheading
+      {Dean's List}{2011 - 2016}
+      {Recognition for First Class Students in the Faculty of Engineering, University of Lagos}{}
+  \CVSubHeadingListEnd
+
+%-----TEACHING EXPERIENCE------------------------------------------------------
+\begin{comment}
+Section is here as it applied to my application for positions in academia. 
+Remember to tailor the resume for to the position.
+\end{comment}
+
+\section{Teaching Experience}
+  \CVSubHeadingListStart
+%    \CVSubheading
+%      {What}{When}
+%      {School}{Where}
+
+    \CVSubheading
+      {Ethical STEM: Race, Justice and Embodied Practice (TAPS 151D) (Teaching Assistant)}{Winter 2021/2022}
+      {Stanford University}{Stanford, CA}
+      
+    \CVSubheading
+      {Introduction to Black Studies (AFRICAAM 105) (Teaching Assistant)}{Fall 2021/2022}
+      {Stanford University}{Stanford, CA}
+      
+    \CVSubheading
+      {Carbon Capture and Sequestration (ENERGY 253) (Teaching Assistant)}{Fall 2020/2021}
+      {Stanford University}{Stanford, CA}
+    \CVSubheading
+      {Sustainable Energy for 11 Billion (ENERGY 104) (Teaching Assistant)}{Spring 2018/2019}
+      {Stanford University}{Stanford, CA}
+    \CVSubheading
+      {Automative Technology and Practice (MEC 227)  (Secondary Instructor)}{S2,  2016/2017}
+      {Moshood Abiola Polytechnic}{Ogun, Nigeria}
+    \CVSubheading
+      {Mechanical Engineering Science (MEC 124)  (Teaching Assistant)}{S2,  2016/2017}
+      {Moshood Abiola Polytechnic}{Ogun, Nigeria}
+    \CVSubheading
+      {Mechanical Engineering Lab Tools and Practices (MEC 126) (Teaching Assistant)}{S2,  2016/2017}
+      {Moshood Abiola Polytechnic}{Ogun, Nigeria}
+  \CVSubHeadingListEnd
+
+
+
+%-----COMMUNITY INVOLVEMENT----------------------------------------------------
+\section{Community Involvement}
+  \CVSubHeadingListStart
+%    \CVSubheading %Example
+%      {What you did}{When you worked there}
+%      {Who you worked for}{Where they are located}
+
+    \CVSubheading
+      {Stanford Energy Resources Engineering}{Fall 2020 -- 2022}{ Graduate Student Wellness Liaison}{Stanford, CA}
+      
+    \CVSubheading
+      {Women in Earth Sciences}{Summer 2020 -- 2022}{Executive Board Member}{Stanford, CA}
+
+    \CVSubheading
+      {Stanford Energy Resources Engineering}{Summer 2018 -- 2022}{New Graduate Student Mentor}{Stanford, CA}
+      
+    \CVSubheading
+      {Black Engineering Graduate Student Association}{Summer 2020 -- Spring 2021}{Co-President}{Stanford, CA}      
+    \CVSubheading
+      {Erevna Fellowship}{Fall 2020}{Research Mentor}{Harvard, MA}  
+    \CVSubheading
+      {Stanford Future Advancers of Science and Technology}{Fall 2018 -- Winter 2019}{Mentor}{San Jose, CA}  
+    \CVSubheading
+      {Mentally Aware Nigeria}{Fall 2016 -- Summer 2017}{Volunteer}{Lagos, Nigeria}   
+  \CVSubHeadingListEnd
+
+%-----SKILLS-------------------------------------------------------------------
+\begin{comment}
+This section is compressed from the various skills sections that Euro CV
+recommends.
+\end{comment}
+
+\section{Skills}
+
+\CVSubHeadingListStart
+    \CVSubheading
+        {Languages}{}
+        {English (Native), Yoruba (Native), French (B1).}{}
+
+    \CVSubheading
+        {Programming}{}
+        {Python, MATLAB, Julia, GIS, Git, Bash, R, Java, C++, Bash, Javascript, Microsoft \\ Excel, LaTeX.}{}
+
+    \CVSubheading
+        {Energy Modeling Open-source Tools}{}
+        {California Avoided Cost Calculator, CapacityExpansion.jl, Crane Tool,\\ En-ROADS, GCAM, urbs.}{}
+
+    \CVSubheading
+        {Data Modeling Tools}{}
+        {PyTorch, SciKit, Gurobi, Seaborn, Claude Code.}{}
+
+
+    \CVSubheading
+        {Statistical and Machine Learning Methods}{}
+        {Linear Programming, Regression Analysis, Data Clustering, Principal Component \\ Analysis, Q-Learning, Markov Decision Processes, Monte-Carlo Simulation.}{}
+
+    \CVSubheading
+        {Financial Modeling}{}
+        {Three-Statements, Discounted Cash Flow (DCF), Project Finance, Corporate Valuation, \\ Electricity Rate Base Analysis.}{}
+
+    \CVSubheading
+        {Technical and Product}{}
+        {Applied Research, Product Strategy, Sprint Planning, Product Roadmapping, Software \\ Architecture, Budget Management}{}
+
+        
+    \CVSubheading
+        {Leadership and Communication}{}
+        {Public Speaking, Corporate Governance, Fund Raising, Contract Negotiation, Technical \\ and Executive Recruiting, Stakeholder Engagement, Product Development, \\ Sales \& Business Development,Team Management, Technical Writing, Grant Writing.}{}
+ \CVSubHeadingListEnd
+
+    
+    
+% \begin{itemize}[leftmargin=0.5cm, label={}]
+%    \small{\item{
+%    \textbf{Languages}{: English (Native), Yoruba (Native), French (B1)} \\
+%     \textbf{Programming}{: Python, Git, MATLAB, Julia, R, Java, C++, Bash, Javascript, Microsoft Excel, LaTeX.} \\
+ %    \textbf{Document Creation}{: Microsoft Office Suite, LaTex} \\
+%    \textbf{Tools}{: Cal-ACC, CapacityExpansion, Crane Tool, En-ROADS, GCAM, urbs, PyTorch, SciKit, Gurobi, Claude Code.} \\
+%    \textbf{Other}{: Research, Machine Learning, Optimization, Data Analysis, Technical Writing.} \\
+%    }}
+% \end{itemize}
+    
+%------------------------------------------------------------------------------
+
+\end{document}
